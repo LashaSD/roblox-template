@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+rojo sourcemap default.project.json -o sourcemap.json
+if [ ! -f ./globalTypes.d.lua ]; then
+    curl -O -s https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.lua
+fi
+
+luau-lsp-rokit analyze \
+    --definitions=globalTypes.d.lua \
+    --base-luaurc=.luaurc \
+    --sourcemap=sourcemap.json \
+    --platform roblox \
+    --no-strict-dm-types \
+    --ignore Packages/**/*.lua \
+    --ignore Packages/**/*.luau \
+    src/ \
+2>&1 | sed -e 's/ \[.*\](/(/; s|'"$PWD"'/||' 1>&2

@@ -1,0 +1,29 @@
+{
+    "name": "blackout-protocol",
+    "tree": {
+        "$className": "DataModel",
+        "ServerScriptService": {
+            "Server": {
+                "$path": "./src/server/"
+            }
+        },
+        "ReplicatedStorage": {
+            "Game": {
+                "$className": "Folder",
+                "Shared": {
+                    "$path": "./src/shared/"
+                },
+                "Assets": {
+                    "$path": "./assets/"
+                }
+            }
+        },
+        "StarterPlayer": {
+            "StarterPlayerScripts": {
+                "Client": {
+                    "$path": "./src/client/"
+                }
+            }
+        }
+    }
+}
