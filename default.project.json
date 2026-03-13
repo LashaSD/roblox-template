@@ -1,5 +1,5 @@
 {
-    "name": "blackout-protocol",
+    "name": "roblox-template",
     "tree": {
         "$className": "DataModel",
         "ServerScriptService": {
