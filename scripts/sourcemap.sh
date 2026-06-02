@@ -1,0 +1,3 @@
+#!/bin/bash
+rojo sourcemap default.project.json --output sourcemap.json --include-non-scripts
+
